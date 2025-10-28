@@ -1,0 +1,6 @@
+com/example/datavalidation/web/DataEntryController.class
+com/example/datavalidation/repository/DataEntryRepository.class
+com/example/datavalidation/model/DataEntry.class
+com/example/datavalidation/web/RestExceptionHandler.class
+com/example/datavalidation/DataValidationApplication.class
+com/example/datavalidation/service/DataEntryService.class

@@ -1,0 +1,6 @@
+/Users/lengarski/Developer/data_validation/src/main/java/com/example/datavalidation/DataValidationApplication.java
+/Users/lengarski/Developer/data_validation/src/main/java/com/example/datavalidation/model/DataEntry.java
+/Users/lengarski/Developer/data_validation/src/main/java/com/example/datavalidation/repository/DataEntryRepository.java
+/Users/lengarski/Developer/data_validation/src/main/java/com/example/datavalidation/service/DataEntryService.java
+/Users/lengarski/Developer/data_validation/src/main/java/com/example/datavalidation/web/DataEntryController.java
+/Users/lengarski/Developer/data_validation/src/main/java/com/example/datavalidation/web/RestExceptionHandler.java
