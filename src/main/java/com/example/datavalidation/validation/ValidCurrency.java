@@ -10,10 +10,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Documented
-@Target({ElementType.FIELD, ElementType.PARAMETER})
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidCurrencyValidator.class)
-public @interface ValidCurrency {
+@Target ({ElementType.FIELD, ElementType.PARAMETER})
+@Retention (RetentionPolicy.RUNTIME)
+@Constraint (validatedBy = ValidCurrencyValidator.class)
+public @interface ValidCurrency
+{
 
     String message() default "Unsupported currency code";
 

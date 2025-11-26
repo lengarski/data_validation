@@ -1,4 +1,4 @@
-package com.example.datavalidation.web;
+package com.example.datavalidation.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

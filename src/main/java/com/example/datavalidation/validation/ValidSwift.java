@@ -10,10 +10,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Documented
-@Target({ElementType.FIELD, ElementType.PARAMETER})
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidSwiftValidator.class)
-public @interface ValidSwift {
+@Target ({ElementType.FIELD, ElementType.PARAMETER})
+@Retention (RetentionPolicy.RUNTIME)
+@Constraint (validatedBy = ValidSwiftValidator.class)
+public @interface ValidSwift
+{
 
     String message() default "Invalid or unsupported SWIFT code";
 

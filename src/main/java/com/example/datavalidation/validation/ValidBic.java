@@ -10,10 +10,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Documented
-@Target({ElementType.FIELD, ElementType.PARAMETER})
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidBicValidator.class)
-public @interface ValidBic {
+@Target ({ElementType.FIELD, ElementType.PARAMETER})
+@Retention (RetentionPolicy.RUNTIME)
+@Constraint (validatedBy = ValidBicValidator.class)
+public @interface ValidBic
+{
 
     String message() default "Invalid or unsupported BIC code";
 

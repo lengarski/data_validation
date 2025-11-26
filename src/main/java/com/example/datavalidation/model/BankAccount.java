@@ -11,28 +11,29 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "bank_accounts")
-public class BankAccount {
+@Table (name = "bank_accounts")
+public class BankAccount
+{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column (nullable = false)
     private String accountHolder;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "country_id", nullable = false)
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn (name = "country_id", nullable = false)
     private Country country;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "currency_id", nullable = false)
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn (name = "currency_id", nullable = false)
     private Currency currency;
 
-    @Column(nullable = false, unique = true)
+    @Column (nullable = false, unique = true)
     private String iban;
 
-    @Column(nullable = false)
+    @Column (nullable = false)
     private String bic;
 
     @Column
@@ -41,63 +42,78 @@ public class BankAccount {
     @Column
     private String sortCode;
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public String getAccountHolder() {
+    public String getAccountHolder()
+    {
         return accountHolder;
     }
 
-    public void setAccountHolder(String accountHolder) {
+    public void setAccountHolder(String accountHolder)
+    {
         this.accountHolder = accountHolder;
     }
 
-    public Country getCountry() {
+    public Country getCountry()
+    {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(Country country)
+    {
         this.country = country;
     }
 
-    public Currency getCurrency() {
+    public Currency getCurrency()
+    {
         return currency;
     }
 
-    public void setCurrency(Currency currency) {
+    public void setCurrency(Currency currency)
+    {
         this.currency = currency;
     }
 
-    public String getIban() {
+    public String getIban()
+    {
         return iban;
     }
 
-    public void setIban(String iban) {
+    public void setIban(String iban)
+    {
         this.iban = iban;
     }
 
-    public String getBic() {
+    public String getBic()
+    {
         return bic;
     }
 
-    public void setBic(String bic) {
+    public void setBic(String bic)
+    {
         this.bic = bic;
     }
 
-    public String getSwift() {
+    public String getSwift()
+    {
         return swift;
     }
 
-    public void setSwift(String swift) {
+    public void setSwift(String swift)
+    {
         this.swift = swift;
     }
 
-    public String getSortCode() {
+    public String getSortCode()
+    {
         return sortCode;
     }
 
-    public void setSortCode(String sortCode) {
+    public void setSortCode(String sortCode)
+    {
         this.sortCode = sortCode;
     }
 }

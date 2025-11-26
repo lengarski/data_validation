@@ -10,10 +10,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Documented
-@Target({ElementType.FIELD, ElementType.PARAMETER})
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidSortCodeValidator.class)
-public @interface ValidSortCode {
+@Target ({ElementType.FIELD, ElementType.PARAMETER})
+@Retention (RetentionPolicy.RUNTIME)
+@Constraint (validatedBy = ValidSortCodeValidator.class)
+public @interface ValidSortCode
+{
 
     String message() default "Invalid sort code";
 

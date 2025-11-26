@@ -10,45 +10,53 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "currencies")
-public class Currency {
+@Table (name = "currencies")
+public class Currency
+{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, unique = true, length = 3)
+    @Enumerated (EnumType.STRING)
+    @Column (nullable = false, unique = true, length = 3)
     private CurrencyCode code;
 
-    @Column(nullable = false)
+    @Column (nullable = false)
     private String name;
 
-    protected Currency() {
+    protected Currency()
+    {
     }
 
-    public Currency(CurrencyCode code, String name) {
+    public Currency(CurrencyCode code, String name)
+    {
         this.code = code;
         this.name = name;
     }
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public CurrencyCode getCode() {
+    public CurrencyCode getCode()
+    {
         return code;
     }
 
-    public void setCode(CurrencyCode code) {
+    public void setCode(CurrencyCode code)
+    {
         this.code = code;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 }

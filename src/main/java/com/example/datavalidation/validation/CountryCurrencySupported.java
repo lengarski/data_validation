@@ -10,10 +10,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Documented
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = CountryCurrencyValidator.class)
-public @interface CountryCurrencySupported {
+@Target (ElementType.TYPE)
+@Retention (RetentionPolicy.RUNTIME)
+@Constraint (validatedBy = CountryCurrencyValidator.class)
+public @interface CountryCurrencySupported
+{
 
     String message() default "Currency is not supported for the given country";
 

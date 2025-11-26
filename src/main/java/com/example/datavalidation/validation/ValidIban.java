@@ -10,10 +10,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Documented
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ValidIbanValidator.class)
-public @interface ValidIban {
+@Target (ElementType.TYPE)
+@Retention (RetentionPolicy.RUNTIME)
+@Constraint (validatedBy = ValidIbanValidator.class)
+public @interface ValidIban
+{
 
     String message() default "IBAN is not valid for the supplied country";
 

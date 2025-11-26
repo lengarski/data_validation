@@ -1,0 +1,112 @@
+{
+  "info": {
+    "_postman_id": "c83a62c4-62bd-4dcb-9135-6c1708d4d321",
+    "name": "Data Validation Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:22222",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Data Entries",
+      "item": [
+        {
+          "name": "List Data Entries",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/data-entries",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "data-entries"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Data Entry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requester\": \"Alice\",\n  \"country\": \"Germany\",\n  \"amount\": 1000,\n  \"quantity\": 2,\n  \"currency\": \"EUR\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/data-entries",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "data-entries"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bank Accounts",
+      "item": [
+        {
+          "name": "List Bank Accounts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/bank-accounts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "bank-accounts"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Bank Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountHolder\": \"Alice Example\",\n  \"countryIso2\": \"GB\",\n  \"currencyCode\": \"GBP\",\n  \"iban\": \"GB33NWBK00000000000000\",\n  \"bic\": \"NWBKGB2L\",\n  \"swift\": \"NWBKGB2L\",\n  \"sortCode\": \"112233\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/bank-accounts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "bank-accounts"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

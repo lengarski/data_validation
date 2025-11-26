@@ -17,80 +17,93 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "data_entries")
-public class DataEntry {
+@Table (name = "data_entries")
+public class DataEntry
+{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Requester is required")
+    @NotBlank (message = "Requester is required")
     private String requester;
 
-    @NotBlank(message = "Country is required")
+    @NotBlank (message = "Country is required")
     private String country;
 
-    @NotNull(message = "Amount is required")
+    @NotNull (message = "Amount is required")
     @Positive
-    @Min(1)
-    @Max(1_000_000)
-    @Column(precision = 19, scale = 2)
+    @Min (1)
+    @Max (1_000_000)
+    @Column (precision = 19, scale = 2)
     private BigDecimal amount;
 
-    @NotNull(message = "Quantity is required")
-    @Min(1)
-    @Max(100)
+    @NotNull (message = "Quantity is required")
+    @Min (1)
+    @Max (100)
     private Integer quantity;
 
-    @NotNull(message = "Currency is required")
-    @Enumerated(EnumType.STRING)
+    @NotNull (message = "Currency is required")
+    @Enumerated (EnumType.STRING)
     private CurrencyCode currency;
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id)
+    {
         this.id = id;
     }
 
-    public String getRequester() {
+    public String getRequester()
+    {
         return requester;
     }
 
-    public void setRequester(String requester) {
+    public void setRequester(String requester)
+    {
         this.requester = requester;
     }
 
-    public String getCountry() {
+    public String getCountry()
+    {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(String country)
+    {
         this.country = country;
     }
 
-    public BigDecimal getAmount() {
+    public BigDecimal getAmount()
+    {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(BigDecimal amount)
+    {
         this.amount = amount;
     }
 
-    public Integer getQuantity() {
+    public Integer getQuantity()
+    {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Integer quantity)
+    {
         this.quantity = quantity;
     }
 
-    public CurrencyCode getCurrency() {
+    public CurrencyCode getCurrency()
+    {
         return currency;
     }
 
-    public void setCurrency(CurrencyCode currency) {
+    public void setCurrency(CurrencyCode currency)
+    {
         this.currency = currency;
     }
 }

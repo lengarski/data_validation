@@ -1,4 +1,4 @@
-package com.example.datavalidation.web;
+package com.example.datavalidation.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

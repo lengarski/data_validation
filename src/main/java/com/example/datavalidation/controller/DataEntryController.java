@@ -1,8 +1,8 @@
-package com.example.datavalidation.web;
+package com.example.datavalidation.controller;
 
 import com.example.datavalidation.model.DataEntry;
 import com.example.datavalidation.service.DataEntryService;
-import com.example.datavalidation.web.dto.DataEntryRequest;
+import com.example.datavalidation.dto.DataEntryRequest;
 
 import jakarta.validation.Valid;
 

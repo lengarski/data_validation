@@ -1,4 +1,4 @@
-package com.example.datavalidation.web.dto;
+package com.example.datavalidation.dto;
 
 import com.example.datavalidation.model.BankAccount;
 

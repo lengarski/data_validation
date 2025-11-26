@@ -11,49 +11,57 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "bank_identifiers")
-public class BankIdentifier {
+@Table (name = "bank_identifiers")
+public class BankIdentifier
+{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 11)
+    @Column (nullable = false, unique = true, length = 11)
     private String bic;
 
-    @Column(nullable = false)
+    @Column (nullable = false)
     private String bankName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "country_id", nullable = false)
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn (name = "country_id", nullable = false)
     private Country country;
 
-    protected BankIdentifier() {
+    protected BankIdentifier()
+    {
     }
 
-    public BankIdentifier(String bic, String bankName, Country country) {
+    public BankIdentifier(String bic, String bankName, Country country)
+    {
         this.bic = bic;
         this.bankName = bankName;
         this.country = country;
     }
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public String getBic() {
+    public String getBic()
+    {
         return bic;
     }
 
-    public void setBic(String bic) {
+    public void setBic(String bic)
+    {
         this.bic = bic;
     }
 
-    public String getBankName() {
+    public String getBankName()
+    {
         return bankName;
     }
 
-    public Country getCountry() {
+    public Country getCountry()
+    {
         return country;
     }
 }

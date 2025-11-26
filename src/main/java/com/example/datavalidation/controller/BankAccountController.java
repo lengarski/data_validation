@@ -1,8 +1,8 @@
-package com.example.datavalidation.web;
+package com.example.datavalidation.controller;
 
 import com.example.datavalidation.service.BankAccountService;
-import com.example.datavalidation.web.dto.BankAccountRequest;
-import com.example.datavalidation.web.dto.BankAccountResponse;
+import com.example.datavalidation.dto.BankAccountRequest;
+import com.example.datavalidation.dto.BankAccountResponse;
 
 import jakarta.validation.Valid;
 
