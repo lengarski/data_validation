@@ -3,6 +3,7 @@ package com.example.datavalidation.validation;
 import com.example.datavalidation.model.CurrencyCode;
 import com.example.datavalidation.service.CountryDirectoryService;
 import com.example.datavalidation.dto.DataEntryRequest;
+import com.example.datavalidation.validation.anotations.CountryCurrencySupported;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

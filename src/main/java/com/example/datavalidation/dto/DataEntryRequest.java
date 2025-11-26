@@ -1,7 +1,7 @@
 package com.example.datavalidation.dto;
 
 import com.example.datavalidation.model.CurrencyCode;
-import com.example.datavalidation.validation.CountryCurrencySupported;
+import com.example.datavalidation.validation.anotations.CountryCurrencySupported;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

@@ -3,7 +3,7 @@ package com.example.datavalidation.service;
 import com.example.datavalidation.model.Country;
 import com.example.datavalidation.model.CurrencyCode;
 import com.example.datavalidation.repository.CountryRepository;
-import com.example.datavalidation.validation.CountryFormat;
+import com.example.datavalidation.validation.enums.CountryFormat;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

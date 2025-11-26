@@ -1,4 +1,6 @@
-package com.example.datavalidation.validation;
+package com.example.datavalidation.validation.anotations;
+
+import com.example.datavalidation.validation.ValidIbanValidator;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

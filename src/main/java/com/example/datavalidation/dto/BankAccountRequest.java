@@ -1,13 +1,13 @@
 package com.example.datavalidation.dto;
 
-import com.example.datavalidation.validation.CountryFormat;
+import com.example.datavalidation.validation.enums.CountryFormat;
 import com.example.datavalidation.validation.ValidBic;
 import com.example.datavalidation.validation.ValidCountry;
 import com.example.datavalidation.validation.ValidCurrency;
-import com.example.datavalidation.validation.ValidIban;
+import com.example.datavalidation.validation.anotations.ValidIban;
 import com.example.datavalidation.validation.ValidSortCode;
 import com.example.datavalidation.validation.ValidSwift;
-import com.example.datavalidation.validation.SortCodeRegion;
+import com.example.datavalidation.validation.enums.SortCodeRegion;
 
 import jakarta.validation.constraints.NotBlank;
 

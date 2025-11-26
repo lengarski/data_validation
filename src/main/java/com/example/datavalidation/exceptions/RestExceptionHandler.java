@@ -1,4 +1,4 @@
-package com.example.datavalidation.controller;
+package com.example.datavalidation.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
