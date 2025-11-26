@@ -2,7 +2,8 @@ package com.example.datavalidation.web.dto;
 
 import com.example.datavalidation.model.BankAccount;
 
-public class BankAccountResponse {
+public class BankAccountResponse
+{
 
     private Long id;
     private String accountHolder;
@@ -15,7 +16,8 @@ public class BankAccountResponse {
     private String swift;
     private String sortCode;
 
-    public static BankAccountResponse fromEntity(BankAccount account) {
+    public static BankAccountResponse fromEntity(BankAccount account)
+    {
         BankAccountResponse response = new BankAccountResponse();
         response.id = account.getId();
         response.accountHolder = account.getAccountHolder();
@@ -30,43 +32,53 @@ public class BankAccountResponse {
         return response;
     }
 
-    public Long getId() {
+    public Long getId()
+    {
         return id;
     }
 
-    public String getAccountHolder() {
+    public String getAccountHolder()
+    {
         return accountHolder;
     }
 
-    public String getCountry() {
+    public String getCountry()
+    {
         return country;
     }
 
-    public String getCountryIso2() {
+    public String getCountryIso2()
+    {
         return countryIso2;
     }
 
-    public String getCountryIso3() {
+    public String getCountryIso3()
+    {
         return countryIso3;
     }
 
-    public String getCurrency() {
+    public String getCurrency()
+    {
         return currency;
     }
 
-    public String getIban() {
+    public String getIban()
+    {
         return iban;
     }
 
-    public String getBic() {
+    public String getBic()
+    {
         return bic;
     }
 
-    public String getSwift() {
+    public String getSwift()
+    {
         return swift;
     }
 
-    public String getSortCode() {
+    public String getSortCode()
+    {
         return sortCode;
     }
 }
