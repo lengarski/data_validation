@@ -1,0 +1,17 @@
+# Maven build output
+/target/
+
+# IDE settings
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS cruft
+.DS_Store
+
+# Logs
+*.log
+
+# Maven wrapper cache
+.mvn/wrapper/maven-wrapper.jar

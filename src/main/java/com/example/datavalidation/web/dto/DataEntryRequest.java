@@ -1,13 +1,7 @@
-package com.example.datavalidation.model;
+package com.example.datavalidation.web.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.datavalidation.model.CurrencyCode;
+import com.example.datavalidation.validation.CountryCurrencySupported;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -16,43 +10,28 @@ import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "data_entries")
-public class DataEntry {
+@CountryCurrencySupported
+public class DataEntryRequest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @NotBlank(message = "Requester is required")
+    @NotBlank(message = "Requester name is required")
     private String requester;
 
     @NotBlank(message = "Country is required")
     private String country;
 
     @NotNull(message = "Amount is required")
-    @Positive
-    @Min(1)
-    @Max(1_000_000)
-    @Column(precision = 19, scale = 2)
+    @Positive(message = "Amount must be positive")
+    @Min(value = 1, message = "Amount must be at least 1")
+    @Max(value = 1_000_000, message = "Amount must be below 1,000,000")
     private BigDecimal amount;
 
     @NotNull(message = "Quantity is required")
-    @Min(1)
-    @Max(100)
+    @Min(value = 1, message = "Quantity must be at least 1")
+    @Max(value = 100, message = "Quantity must be at most 100")
     private Integer quantity;
 
     @NotNull(message = "Currency is required")
-    @Enumerated(EnumType.STRING)
     private CurrencyCode currency;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getRequester() {
         return requester;

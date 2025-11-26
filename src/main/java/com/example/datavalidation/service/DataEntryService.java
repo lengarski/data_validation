@@ -2,6 +2,7 @@ package com.example.datavalidation.service;
 
 import com.example.datavalidation.model.DataEntry;
 import com.example.datavalidation.repository.DataEntryRepository;
+import com.example.datavalidation.web.dto.DataEntryRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,20 +27,28 @@ public class DataEntryService {
                 .orElseThrow(() -> new IllegalArgumentException("DataEntry not found: " + id));
     }
 
-    public DataEntry create(DataEntry entry) {
-        entry.setId(null);
+    public DataEntry create(DataEntryRequest request) {
+        DataEntry entry = new DataEntry();
+        applyRequest(entry, request);
         return repository.save(entry);
     }
 
-    public DataEntry update(Long id, DataEntry updated) {
+    public DataEntry update(Long id, DataEntryRequest request) {
         DataEntry existing = findById(id);
-        existing.setDataKey(updated.getDataKey());
-        existing.setDataValue(updated.getDataValue());
+        applyRequest(existing, request);
         return repository.save(existing);
     }
 
     public void delete(Long id) {
         DataEntry existing = findById(id);
         repository.delete(existing);
+    }
+
+    private void applyRequest(DataEntry target, DataEntryRequest request) {
+        target.setRequester(request.getRequester());
+        target.setCountry(request.getCountry());
+        target.setAmount(request.getAmount());
+        target.setQuantity(request.getQuantity());
+        target.setCurrency(request.getCurrency());
     }
 }

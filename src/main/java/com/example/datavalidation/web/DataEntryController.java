@@ -2,6 +2,7 @@ package com.example.datavalidation.web;
 
 import com.example.datavalidation.model.DataEntry;
 import com.example.datavalidation.service.DataEntryService;
+import com.example.datavalidation.web.dto.DataEntryRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,14 +38,14 @@ public class DataEntryController {
     }
 
     @PostMapping
-    public ResponseEntity<DataEntry> create(@Valid @RequestBody DataEntry entry) {
-        DataEntry created = service.create(entry);
+    public ResponseEntity<DataEntry> create(@Valid @RequestBody DataEntryRequest request) {
+        DataEntry created = service.create(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
     @PutMapping("/{id}")
-    public DataEntry update(@PathVariable Long id, @Valid @RequestBody DataEntry entry) {
-        return service.update(id, entry);
+    public DataEntry update(@PathVariable Long id, @Valid @RequestBody DataEntryRequest request) {
+        return service.update(id, request);
     }
 
     @DeleteMapping("/{id}")
