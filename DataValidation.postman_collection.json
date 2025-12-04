@@ -9,6 +9,11 @@
       "key": "baseUrl",
       "value": "http://localhost:22222",
       "type": "string"
+    },
+    {
+      "key": "entryId",
+      "value": "1",
+      "type": "string"
     }
   ],
   "item": [
@@ -28,6 +33,24 @@
               "path": [
                 "api",
                 "data-entries"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Data Entry",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/data-entries/{{entryId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "data-entries",
+                "{{entryId}}"
               ]
             }
           }
@@ -54,6 +77,51 @@
               "path": [
                 "api",
                 "data-entries"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Data Entry",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requester\": \"Alice\",\n  \"country\": \"Germany\",\n  \"amount\": 1500,\n  \"quantity\": 3,\n  \"currency\": \"EUR\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/data-entries/{{entryId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "data-entries",
+                "{{entryId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Data Entry",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/data-entries/{{entryId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "data-entries",
+                "{{entryId}}"
               ]
             }
           }
