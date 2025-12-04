@@ -175,6 +175,54 @@
           }
         }
       ]
+    },
+    {
+      "name": "Demo",
+      "item": [
+        {
+          "name": "Get Demo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/demo",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "demo"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Demo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/demo",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "demo"
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
