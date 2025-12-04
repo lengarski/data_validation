@@ -10,6 +10,14 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor (access = AccessLevel.PROTECTED)
 @Entity
 @Table (name = "bank_identifiers")
 public class BankIdentifier
@@ -29,39 +37,10 @@ public class BankIdentifier
     @JoinColumn (name = "country_id", nullable = false)
     private Country country;
 
-    protected BankIdentifier()
-    {
-    }
-
     public BankIdentifier(String bic, String bankName, Country country)
     {
         this.bic = bic;
         this.bankName = bankName;
         this.country = country;
-    }
-
-    public Long getId()
-    {
-        return id;
-    }
-
-    public String getBic()
-    {
-        return bic;
-    }
-
-    public void setBic(String bic)
-    {
-        this.bic = bic;
-    }
-
-    public String getBankName()
-    {
-        return bankName;
-    }
-
-    public Country getCountry()
-    {
-        return country;
     }
 }

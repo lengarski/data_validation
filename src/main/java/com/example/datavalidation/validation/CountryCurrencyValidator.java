@@ -8,19 +8,17 @@ import com.example.datavalidation.validation.anotations.CountryCurrencySupported
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class CountryCurrencyValidator
         implements ConstraintValidator<CountryCurrencySupported, DataEntryRequest>
 {
 
     private final CountryDirectoryService countryDirectoryService;
-
-    public CountryCurrencyValidator(CountryDirectoryService countryDirectoryService)
-    {
-        this.countryDirectoryService = countryDirectoryService;
-    }
 
     @Override
     public boolean isValid(DataEntryRequest value, ConstraintValidatorContext context)

@@ -11,6 +11,11 @@ import com.example.datavalidation.validation.enums.SortCodeRegion;
 
 import jakarta.validation.constraints.NotBlank;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @ValidIban (countryField = "countryIso2", ibanField = "iban")
 public class BankAccountRequest
 {
@@ -39,73 +44,4 @@ public class BankAccountRequest
     @ValidSortCode (regions = {SortCodeRegion.UK, SortCodeRegion.US})
     private String sortCode;
 
-    public String getAccountHolder()
-    {
-        return accountHolder;
-    }
-
-    public void setAccountHolder(String accountHolder)
-    {
-        this.accountHolder = accountHolder;
-    }
-
-    public String getCountryIso2()
-    {
-        return countryIso2;
-    }
-
-    public void setCountryIso2(String countryIso2)
-    {
-        this.countryIso2 = countryIso2;
-    }
-
-    public String getCurrencyCode()
-    {
-        return currencyCode;
-    }
-
-    public void setCurrencyCode(String currencyCode)
-    {
-        this.currencyCode = currencyCode;
-    }
-
-    public String getIban()
-    {
-        return iban;
-    }
-
-    public void setIban(String iban)
-    {
-        this.iban = iban;
-    }
-
-    public String getBic()
-    {
-        return bic;
-    }
-
-    public void setBic(String bic)
-    {
-        this.bic = bic;
-    }
-
-    public String getSwift()
-    {
-        return swift;
-    }
-
-    public void setSwift(String swift)
-    {
-        this.swift = swift;
-    }
-
-    public String getSortCode()
-    {
-        return sortCode;
-    }
-
-    public void setSortCode(String sortCode)
-    {
-        this.sortCode = sortCode;
-    }
 }

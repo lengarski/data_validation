@@ -6,20 +6,18 @@ import com.example.datavalidation.validation.enums.CountryFormat;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class ValidCountryValidator
         implements ConstraintValidator<ValidCountry, String>
 {
 
     private final CountryDirectoryService countryDirectoryService;
     private CountryFormat format;
-
-    public ValidCountryValidator(CountryDirectoryService countryDirectoryService)
-    {
-        this.countryDirectoryService = countryDirectoryService;
-    }
 
     @Override
     public void initialize(ValidCountry constraintAnnotation)

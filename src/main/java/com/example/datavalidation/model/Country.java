@@ -10,6 +10,12 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor (access = AccessLevel.PROTECTED)
 @Entity
 @Table (name = "countries")
 public class Country
@@ -41,10 +47,6 @@ public class Country
     @Column (name = "iban_regex")
     private String ibanRegex;
 
-    protected Country()
-    {
-    }
-
     public Country(String name, String iso2, String iso3, String phonePrefix, String capital, Currency currency, String ibanRegex)
     {
         this.name = name;
@@ -54,45 +56,5 @@ public class Country
         this.capital = capital;
         this.currency = currency;
         this.ibanRegex = ibanRegex;
-    }
-
-    public Long getId()
-    {
-        return id;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public String getIso2()
-    {
-        return iso2;
-    }
-
-    public String getIso3()
-    {
-        return iso3;
-    }
-
-    public String getPhonePrefix()
-    {
-        return phonePrefix;
-    }
-
-    public String getCapital()
-    {
-        return capital;
-    }
-
-    public Currency getCurrency()
-    {
-        return currency;
-    }
-
-    public String getIbanRegex()
-    {
-        return ibanRegex;
     }
 }

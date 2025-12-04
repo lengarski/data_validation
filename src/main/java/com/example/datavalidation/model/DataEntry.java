@@ -16,6 +16,11 @@ import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 @Table (name = "data_entries")
 public class DataEntry
@@ -47,63 +52,4 @@ public class DataEntry
     @Enumerated (EnumType.STRING)
     private CurrencyCode currency;
 
-    public Long getId()
-    {
-        return id;
-    }
-
-    public void setId(Long id)
-    {
-        this.id = id;
-    }
-
-    public String getRequester()
-    {
-        return requester;
-    }
-
-    public void setRequester(String requester)
-    {
-        this.requester = requester;
-    }
-
-    public String getCountry()
-    {
-        return country;
-    }
-
-    public void setCountry(String country)
-    {
-        this.country = country;
-    }
-
-    public BigDecimal getAmount()
-    {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount)
-    {
-        this.amount = amount;
-    }
-
-    public Integer getQuantity()
-    {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity)
-    {
-        this.quantity = quantity;
-    }
-
-    public CurrencyCode getCurrency()
-    {
-        return currency;
-    }
-
-    public void setCurrency(CurrencyCode currency)
-    {
-        this.currency = currency;
-    }
 }

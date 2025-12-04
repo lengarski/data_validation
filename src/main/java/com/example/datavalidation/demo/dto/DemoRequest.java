@@ -1,4 +1,8 @@
 package com.example.datavalidation.demo.dto;
 
-public class DemoRequest {
+import lombok.Data;
+
+@Data
+public class DemoRequest
+{
 }

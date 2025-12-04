@@ -7,6 +7,8 @@ import com.example.datavalidation.validation.anotations.ValidIban;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -14,6 +16,7 @@ import org.springframework.util.StringUtils;
 import java.util.Optional;
 
 @Component
+@RequiredArgsConstructor
 public class ValidIbanValidator
         implements ConstraintValidator<ValidIban, Object>
 {
@@ -21,11 +24,6 @@ public class ValidIbanValidator
     private final CountryDirectoryService countryDirectoryService;
     private String countryField;
     private String ibanField;
-
-    public ValidIbanValidator(CountryDirectoryService countryDirectoryService)
-    {
-        this.countryDirectoryService = countryDirectoryService;
-    }
 
     @Override
     public void initialize(ValidIban constraintAnnotation)

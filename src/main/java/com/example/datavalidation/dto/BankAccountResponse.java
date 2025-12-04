@@ -2,6 +2,9 @@ package com.example.datavalidation.dto;
 
 import com.example.datavalidation.model.BankAccount;
 
+import lombok.Getter;
+
+@Getter
 public class BankAccountResponse
 {
 
@@ -32,53 +35,4 @@ public class BankAccountResponse
         return response;
     }
 
-    public Long getId()
-    {
-        return id;
-    }
-
-    public String getAccountHolder()
-    {
-        return accountHolder;
-    }
-
-    public String getCountry()
-    {
-        return country;
-    }
-
-    public String getCountryIso2()
-    {
-        return countryIso2;
-    }
-
-    public String getCountryIso3()
-    {
-        return countryIso3;
-    }
-
-    public String getCurrency()
-    {
-        return currency;
-    }
-
-    public String getIban()
-    {
-        return iban;
-    }
-
-    public String getBic()
-    {
-        return bic;
-    }
-
-    public String getSwift()
-    {
-        return swift;
-    }
-
-    public String getSortCode()
-    {
-        return sortCode;
-    }
 }

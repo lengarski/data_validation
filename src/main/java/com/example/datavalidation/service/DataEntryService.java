@@ -4,6 +4,8 @@ import com.example.datavalidation.model.DataEntry;
 import com.example.datavalidation.repository.DataEntryRepository;
 import com.example.datavalidation.dto.DataEntryRequest;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,15 +13,11 @@ import java.util.List;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class DataEntryService
 {
 
     private final DataEntryRepository repository;
-
-    public DataEntryService(DataEntryRepository repository)
-    {
-        this.repository = repository;
-    }
 
     public List<DataEntry> findAll()
     {

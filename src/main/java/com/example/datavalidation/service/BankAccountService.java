@@ -9,6 +9,8 @@ import com.example.datavalidation.repository.CurrencyRepository;
 import com.example.datavalidation.dto.BankAccountRequest;
 import com.example.datavalidation.dto.BankAccountResponse;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,19 +18,13 @@ import java.util.List;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class BankAccountService
 {
 
     private final BankAccountRepository bankAccountRepository;
     private final CurrencyRepository currencyRepository;
     private final CountryDirectoryService countryDirectoryService;
-
-    public BankAccountService(BankAccountRepository bankAccountRepository, CurrencyRepository currencyRepository, CountryDirectoryService countryDirectoryService)
-    {
-        this.bankAccountRepository = bankAccountRepository;
-        this.currencyRepository = currencyRepository;
-        this.countryDirectoryService = countryDirectoryService;
-    }
 
     public List<BankAccountResponse> findAll()
     {

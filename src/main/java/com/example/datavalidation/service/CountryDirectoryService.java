@@ -5,6 +5,8 @@ import com.example.datavalidation.model.CurrencyCode;
 import com.example.datavalidation.repository.CountryRepository;
 import com.example.datavalidation.validation.enums.CountryFormat;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -13,15 +15,11 @@ import java.util.Optional;
 
 @Service
 @Transactional (readOnly = true)
+@RequiredArgsConstructor
 public class CountryDirectoryService
 {
 
     private final CountryRepository countryRepository;
-
-    public CountryDirectoryService(CountryRepository countryRepository)
-    {
-        this.countryRepository = countryRepository;
-    }
 
     public boolean isCurrencyAllowedForCountry(String countryName, CurrencyCode currency)
     {

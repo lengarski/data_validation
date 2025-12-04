@@ -5,11 +5,14 @@ import com.example.datavalidation.repository.BankIdentifierRepository;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Component;
 
 import java.util.regex.Pattern;
 
 @Component
+@RequiredArgsConstructor
 public class ValidSwiftValidator
         implements ConstraintValidator<ValidSwift, String>
 {
@@ -17,11 +20,6 @@ public class ValidSwiftValidator
     private static final Pattern SWIFT_PATTERN = Pattern.compile("^[A-Z]{4}[A-Z]{2}[A-Z0-9]{2}([A-Z0-9]{3})?$");
 
     private final BankIdentifierRepository bankIdentifierRepository;
-
-    public ValidSwiftValidator(BankIdentifierRepository bankIdentifierRepository)
-    {
-        this.bankIdentifierRepository = bankIdentifierRepository;
-    }
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context)

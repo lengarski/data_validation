@@ -10,6 +10,11 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 @Table (name = "bank_accounts")
 public class BankAccount
@@ -42,78 +47,4 @@ public class BankAccount
     @Column
     private String sortCode;
 
-    public Long getId()
-    {
-        return id;
-    }
-
-    public String getAccountHolder()
-    {
-        return accountHolder;
-    }
-
-    public void setAccountHolder(String accountHolder)
-    {
-        this.accountHolder = accountHolder;
-    }
-
-    public Country getCountry()
-    {
-        return country;
-    }
-
-    public void setCountry(Country country)
-    {
-        this.country = country;
-    }
-
-    public Currency getCurrency()
-    {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency)
-    {
-        this.currency = currency;
-    }
-
-    public String getIban()
-    {
-        return iban;
-    }
-
-    public void setIban(String iban)
-    {
-        this.iban = iban;
-    }
-
-    public String getBic()
-    {
-        return bic;
-    }
-
-    public void setBic(String bic)
-    {
-        this.bic = bic;
-    }
-
-    public String getSwift()
-    {
-        return swift;
-    }
-
-    public void setSwift(String swift)
-    {
-        this.swift = swift;
-    }
-
-    public String getSortCode()
-    {
-        return sortCode;
-    }
-
-    public void setSortCode(String sortCode)
-    {
-        this.sortCode = sortCode;
-    }
 }
